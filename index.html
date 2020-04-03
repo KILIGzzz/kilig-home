@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>KILIG</title>
+<link rel="stylesheet" href="main.css">
+</head>
+
+
+<body>
+<div id="bodyBox">
+<form id="form0" target="_blank">
+<video id="liveBgBox" autoplay="true" loop="true" muted="true"></video>
+<input type="text" class="input ypoctonod" id="input0" name="word" size="30" placeholder="Search" autocomplete="off" oncontextmenu="showSearchMenu(event,this)">
+
+
+
+<img class="bgbox" id="bgbox" src="4.jpeg" 
+
+
+
+
+
+
+
+
+
+style="background-size: auto 100%; background-position: center center; display: block; opacity: 1;">
+<div class="cover" id="cover" onclick="Input_Blur()"></div>
+<input type="submit" class="btn_search" value="Search">
+</form>
+<div id="searchOptBox">
+<span class="searchOpt" id="searchOpt1" onclick="switchSearchEng('baidu')"><i class="iconfont" id="iconBaidu">&#xe651;</i></span><span class="searchOpt" id="searchOpt2" onclick="switchSearchEng('bing')"><i class="iconfont" id="iconBing">&#xe608;</i></span><span class="searchOpt" id="searchOpt3" onclick="switchSearchEng('google')"><i class="iconfont" id="iconGoogle">&#xe624;</i></span>
+</div>
+<div class="keyword" id="keyword"></div>
+
+<div class="quotebox" id="quotebox" onclick="Input_Blur()">
+    <span class="quote-bg"></span>
+    <p class="quote-content"></p>
+    <p class="quote-author"></p>
+    </div>
+
+<div class="navbox" id="navbox">
+<div class="navbox0" id="navbox0">
+<div class="navboxes" id="navbox1">
+<table>
+<tr>
+<td><a href="https://fanyi.baidu.com/" target="_blank" class="nav_links">翻译</a></td>
+<td><a href="https://www.bilibili.com/" target="_blank" class="nav_links">Bilibili</a></td>
+<td><a href="https://kiligzzz.github.io/" target="_blank" class="nav_links">KIILG</a></td>
+<td><a href="https://github.com/" target="_blank" class="nav_links">GitHub</a></td>
+<td><a href="https://mp.weixin.qq.com/s/2ffqoB0CMybP2w-NZZmdrw" target="_blank" class="nav_links">Java学习路线</a></td>
+
+</table>
+</div>
+<div class="navboxes" id="navbox2">
+<div class="shouldNotFade" id="noteListWrap">
+<div class="shouldNotFade" id="noteList">
+<div class="noteItem shouldNotFade" @click="newNote()">
+<i class="iconfont shouldNotFade" id="iconAdd">&#xe620;</i><span class="noteTitle shouldNotFade" id="noteTitle0"></span>
+</div>
+<div v-for="(item,index) in list.text" v-bind:class="{noteItem:1,shouldNotFade:1,current:current===index+1}" @click="open(index+1)">
+<span class="noteTitle shouldNotFade">{{item.text}}</span><br>
+<span class="noteTime shouldNotFade">{{item.time}}</span>
+</div>
+</div>
+</div>
+<textarea class="shouldNotFade" id="textNote" placeholder=""></textarea>
+<div class="shouldNotFade" id="noteToolBar">
+<div class="toolBarBtns" id="btnDelNote" title=""><i class="iconfont shouldNotFade">&#xe614;</i></div>
+<div class="toolBarBtns" id="btnPinNote" title=""><i class="iconfont shouldNotFade" id="iconPin">&#xe849;</i></div>
+<div class="toolBarBtns" id="btnSaveNote" title=""><i class="iconfont shouldNotFade" id="iconSave">&#xe996;</i></div>
+<div class="toolBarTip" id="tipNoteCloud"><span id="txtNoteCloudStatus"></span><i class="iconfont" id="iconNoteCloud">&#xeabf;</i></div>
+</div>
+</div>
+</div>
+
+<div id="navboxCustom">
+</div>
+
+<div class="shouldNotFade" id="menuCusNav">
+<div class="userMenuItem" id="cusNavMenuDel"><i class="iconfont" id="iconDel">&#xeb95;</i></div>
+</div>
+</div>
+
+
+
+<div class="title" id="title">
+    <h1 id="titleText">
+        
+        <div class="time">
+            <SCRIPT language=JavaScript>
+            tmpDate = new Date();
+            hours = tmpDate.getHours();
+            minutes = tmpDate.getMinutes();
+            hours=hours>9?hours:"0"+hours;
+            minutes=minutes>9?minutes:"0"+minutes;
+            document.write(hours)
+            document.write(':');
+            document.write(minutes);
+            </SCRIPT>
+        </div>
+
+    </h1>
+</div>
+
+
+
+<span id="btnWarn"><i class="iconfont">&#xe6e1;</i></span>
+
+<span id="btnUser" title="用户"></span>
+
+
+
+
+
+
+<span id="btnSettings" title="设置" onclick="btnSettingsClick()"></i></span>
+
+<span id="btnLike" onclick="likeClick()" onmouseenter="showMenu(wallpaperInfo)" onmouseleave="hideMenu(wallpaperInfo)"><i class="iconfont">&#xe64f;</i>&nbsp;<span id="numLiked">ZRY</span></span>
+<div id="wallpaperInfo"></div>
+<div id="pinnedBox">
+
+</div>
+<div id="greetingBox"><span id="greeting">欢迎回来~</span></div>
+<div class="footer">
+
+
+
+
+
+
+<a href="http://kiligzzz.github.io" title="KILIG的主页" target="_blank" class="links">&copy; KILIG </a> 丨 <a href="http://kiligzzz.github.io" title="关于「KILIG」" class="links" onclick="showAbout()">开始</a>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="main.js"></script>
+</body>
+</html>
